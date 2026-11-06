@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بحث JavaScript | أروى محمد ابراهيم</title>
+<style>
+• { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+body { background: #f2f4f8; color: #222; line-height: 1.9; transition: 0.3s; }
+body.dark { background: #121212; color: #f1f1f1; }
+header { background: linear-gradient(135deg, #007bff, #00c6ff); color: #fff; text-align: center; padding: 50px 20px 40px; }
+header h1 { font-size: 38px; margin-bottom: 10px; }
+header p { font-size: 19px; opacity: 0.95; }
+header .info { margin-top: 20px; background: rgba(255,255,255,0.2); display: inline-block; padding: 15px 25px; border-radius: 12px; text-align: right; }
+header button { margin-top: 20px; padding: 11px 22px; border: none; border-radius: 25px; cursor: pointer; background: #fff; color: #007bff; font-weight: bold; font-size: 15px; }
+nav { background: #111; text-align: center; padding: 14px 10px; position: sticky; top: 0; z-index: 100; }
+nav a { color: #fff; margin: 0 10px; text-decoration: none; font-weight: bold; font-size: 15px; }
+nav a:hover { color: #00c6ff; }
+main { max-width: 850px; margin: 25px auto; padding: 0 15px; }
+.card { background: #fff; padding: 28px; margin-bottom: 22px; border-radius: 16px; box-shadow: 0 4px 18px rgba(0,0,0,0.08); }
+body.dark .card { background: #1e1e1e; box-shadow: none; }
+.card h2 { color: #007bff; margin-bottom: 14px; font-size: 24px; border-bottom: 2px solid #007bff; padding-bottom: 8px; }
+.card h3 { margin: 18px 0 8px; color: #333; }
+body.dark .card h3 { color: #ddd; }
+.card ul, .card ol { margin-right: 22px; margin-top: 10px; }
+.card li { margin-bottom: 8px; }
+.code-box { background: #111; color: #00ff88; padding: 16px; border-radius: 10px; direction: ltr; text-align: left; overflow-x: auto; margin: 15px 0; font-family: monospace; font-size: 14px; }
+button.btn { background: #007bff; color: #fff; border: none; padding: 12px 20px; border-radius: 10px; cursor: pointer; margin: 6px; font-size: 15px; }
+button.btn:hover { background: #0056b3; }
+input { padding: 12px; border: 1px solid #ccc; border-radius: 10px; width: 100%; max-width: 320px; margin: 6px 0; font-size: 15px; }
+.menu { display: none; background: #eef4ff; padding: 14px; border-radius: 10px; margin-top: 12px; }
+body.dark .menu { background: #333; }
+#result { margin-top: 12px; font-weight: bold; }
+footer { text-align: center; padding: 22px; background: #111; color: #fff; margin-top: 20px; }
+@media (max-width: 600px) { header h1 { font-size: 28px; } nav a { display: inline-block; margin: 6px; } }
+</style>
+</head>
+<body>
+
+<header>
+<h1>لغة JavaScript</h1>
+<p>وكيفية تفاعل المواقع مع المستخدمين</p>
+<div class="info">
+<p><b>إعداد الطالبة:</b> أروى محمد ابراهيم</p>
+<p><b>الرقم الجامعي:</b> 2500820</p>
+<p><b>تحت إشراف:</b> الدكتورة مها زغلول</p>
+<p><b>القسم:</b> علوم الحاسب وتطوير الويب</p>
+</div>
+<br>
+<button onclick="toggleDark()">🌙 الوضع الداكن / الفاتح</button>
+</header>
+
+<nav>
+<a href="#intro">المقدمة</a>
+<a href="#ch1">الفصل الأول</a>
+<a href="#ch2">الفصل الثاني</a>
+<a href="#ch3">الفصل الثالث</a>
+<a href="#demo">جرب بنفسك</a>
+<a href="#end">الخاتمة</a>
+</nav>
+
+<main>
+
+<section id="intro" class="card">
+<h2>المقدمة</h2>
+<p>مع التطور الكبير في شبكة الإنترنت، لم يعد الموقع مجرد صفحة ثابتة للقراءة فقط، بل أصبح بيئة تفاعلية يستطيع المستخدم من خلالها الضغط والكتابة والاختيار ومشاهدة النتائج في نفس اللحظة.</p>
+<p>وتعد لغة JavaScript هي المسؤولة الأولى عن هذا التفاعل، حيث تعمل داخل متصفح المستخدم، وتسمح للموقع بالاستجابة الفورية لأي فعل يقوم به المستخدم، دون الحاجة إلى إعادة تحميل الصفحة بالكامل.</p>
+<p><b>يهدف هذا البحث إلى:</b> شرح ما هي لغة JavaScript، وكيف تعمل، وكيف تتفاعل المواقع مع المستخدمين من خلالها، مع ذكر أمثلة عملية وتطبيقات واقعية.</p>
+</section>
+
+<section id="ch1" class="card">
+<h2>الفصل الأول: ما هي لغة JavaScript؟</h2>
+<h3>1-1 تعريف اللغة</h3>
+<p>هي لغة برمجة عالية المستوى، تم إنشاؤها عام 1995، وتعمل بشكل أساسي داخل متصفحات الويب مثل Google Chrome و Safari و Firefox.</p>
+<h3>1-2 خصائص اللغة</h3>
+<ul>
+<li>لغة مفسرة، تعمل مباشرة دون الحاجة إلى تجميع</li>
+<li>تعمل على جانب العميل Client-Side، أي داخل جهاز المستخدم نفسه، مما يجعلها سريعة</li>
+<li>تدعم البرمجة الكائنية والوظيفية</li>
+<li>تعمل مع لغتي HTML و CSS لتكوين صفحة ويب متكاملة</li>
+</ul>
+<h3>1-3 دور كل لغة في الموقع</h3>
+<ul>
+<li><b>HTML:</b> المسؤولة عن بناء هيكل الصفحة</li>
+<li><b>CSS:</b> المسؤولة عن الشكل والألوان والتنسيق</li>
+<li><b>JavaScript:</b> المسؤولة عن الحركة والتفاعل والاستجابة</li>
+</ul>
+</section>
+
+<section id="ch2" class="card">
+<h2>الفصل الثاني: كيف تتفاعل المواقع مع المستخدمين؟</h2>
+<p>يتم التفاعل من خلال ما يسمى بـ <b>معالجة الأحداث Event Handling</b>، ويمر بثلاث مراحل:</p>
+<ol>
+<li><b>الحدث Event:</b> هو أي فعل يقوم به المستخدم، مثل النقر على زر Click أو تحريك الماوس Hover أو الكتابة Keydown أو إرسال نموذج Submit</li>
+<li><b>المستمع Event Listener:</b> هو وظيفة برمجية تظل في حالة انتظار، وتراقب حدوث حدث معين على عنصر معين</li>
+<li><b>الدالة الاستجابية Handler:</b> هي الكود الذي يتم تنفيذه فور حدوث الحدث، مثل إظهار رسالة، أو تغيير لون، أو إخفاء عنصر</li>
+</ol>
+<h3>مثال عملي:</h3>
+<div class="code-box">
+document.getElementById("myButton").addEventListener("click", function() {<br>
+  alert("أهلاً بيكي يا أروى في موقعنا التفاعلي!");<br>
+});
+</div>
+<p>في هذا المثال، عند الضغط على الزر، ستظهر رسالة ترحيبية للمستخدم فوراً.</p>
+</section>
+
+<section id="ch3" class="card">
+<h2>الفصل الثالث: تطبيقات عملية لـ JavaScript</h2>
+<h3>3-1 القوائم المنسدلة Dropdown Menus</h3>
+<p>عند الضغط على القائمة تظهر الخيارات، وعند الضغط مرة أخرى تختفي.</p>
+<h3>3-2 الوضع الداكن Dark Mode</h3>
+<p>يسمح للمستخدم بتغيير ألوان الموقع كله من الفاتح إلى الداكن بضغطة واحدة.</p>
+<h3>3-3 التحقق من البيانات Form Validation</h3>
+<p>قبل إرسال النموذج، تتأكد اللغة من أن المستخدم أدخل بيانات صحيحة، مثل التأكد من كتابة البريد الإلكتروني بشكل صحيح.</p>
+<h3>3-4 تحديث المحتوى دون إعادة تحميل الصفحة AJAX</h3>
+<p>مثل مواقع نتائج المباريات أو أسعار العملات، حيث يتم تحديث البيانات تلقائياً دون الحاجة إلى عمل Refresh للصفحة.</p>
+<h3>3-5 ألعاب الويب والتطبيقات التفاعلية</h3>
+<p>تستخدم JavaScript في بناء الألعاب البسيطة داخل المتصفح، وتطبيقات مثل الآلة الحاسبة وتطبيقات المهام.</p>
+</section>
+
+<section id="demo" class="card">
+<h2>جرب بنفسك - مثال عملي من البحث</h2>
+<p>ده تطبيق حي لكل اللي اتشرح فوق، جربه:</p>
+<br>
+<button class="btn" id="myButton">1. اضغطي هنا للترحيب</button>
+<button class="btn" id="menuBtn">2. القائمة المنسدلة ▼</button>
+<div id="myMenu" class="menu">
+<p>📘 الفصل الأول: ما هي JavaScript</p>
+<p>📗 الفصل الثاني: التفاعل مع المستخدم</p>
+<p>📙 الفصل الثالث: تطبيقات عملية</p>
+</div>
+<br><br>
+<h3>3. التحقق من البيانات:</h3>
+<input type="text" id="nameInput" placeholder="اكتبي اسمك هنا">
+<br>
+<input type="email" id="emailInput" placeholder="اكتبي ايميلك هنا">
+<br>
+<button class="btn" id="submitBtn">إرسال البيانات</button>
+<p id="result"></p>
+</section>
+
+<section id="end" class="card">
+<h2>الخاتمة</h2>
+<p>نستنتج من هذا البحث أن لغة JavaScript هي العقل المحرك لتفاعل المواقع مع المستخدمين، فبدونها سيكون الموقع صفحة جامدة لا تستجيب لأي فعل.</p>
+<p>وقد ساهمت اللغة في تحسين تجربة المستخدم UX، وتقليل الضغط على السيرفر، وتحويل المواقع العادية إلى تطبيقات ويب متكاملة تشبه تطبيقات الهاتف.</p>
+<p>ومع استمرار تطور الويب، ستظل JavaScript من أهم اللغات المطلوبة في سوق العمل في مجال تطوير الويب.</p>
+<h3>المصادر والمراجع</h3>
+<ul>
+<li>MDN Web Docs - developer.mozilla.org</li>
+<li>W3Schools - www.w3schools.com/js</li>
+<li>كتاب Eloquent JavaScript - Marijn Haverbeke</li>
+<li>موقع JavaScript.info</li>
+</ul>
+</section>
+
+</main>
+
+<footer>بحث جامعي © أروى محمد ابراهيم - 2500820 - تحت إشراف الدكتورة مها زغلول - 2026</footer>
+
+<script>
+function toggleDark() {
+document.body.classList.toggle("dark");
+}
+document.getElementById("myButton").addEventListener("click", function() {
+alert("أهلاً بيكي يا أروى في موقعنا التفاعلي!");
+});
+document.getElementById("menuBtn").addEventListener("click", function() {
+let menu = document.getElementById("myMenu");
+menu.style.display = menu.style.display === "block" ? "none" : "block";
+});
+document.getElementById("submitBtn").addEventListener("click", function() {
+let name = document.getElementById("nameInput").value;
+let email = document.getElementById("emailInput").value;
+let result = document.getElementById("result");
+if (name === "" || email === "") {
+result.textContent = "من فضلك املي كل البيانات!";
+result.style.color = "red";
+} else if (!email.includes("@")) {
+result.textContent = "الايميل غلط، لازم يكون فيه @";
+result.style.color = "red";
+} else {
+result.textContent = "تم الإرسال بنجاح يا " + name + " ✅";
+result.style.color = "green";
+}
+});
+</script>
+
+</body>
+</html>
